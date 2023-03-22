@@ -36,7 +36,7 @@ void print_to_98(int n)
 			_putchar(second_digit + '0');
 			_putchar((num % 10) + '0');
 		}
-		if (num != 98)
+		if (n != 98)
 		{
 			_putchar(',');
 			_putchar(' ');
