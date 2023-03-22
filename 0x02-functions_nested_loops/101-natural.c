@@ -18,4 +18,5 @@ int main(void)
 		}
 	}
 	printf("the sum of all multiples of either 3 or 5 is %d\n", sum);
+	return (0);
 }
