@@ -14,10 +14,13 @@ int main(void)
 	for (i = 0; i < 50; i++)
 	{
 		int new_fib = first_fib + sec_fib;
+
 		first_fib = sec_fib;
 		sec_fib = new_fib;
 		if (i < 49)
-			printf("%i => %i, ", i, new_fib);	
+			printf("%li, ", new_fib);
+		else
+			printf("%li", new_fib);
 	}
 	printf("\n");
 	return (0);
