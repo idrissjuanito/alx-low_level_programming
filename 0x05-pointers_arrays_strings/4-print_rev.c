@@ -18,6 +18,6 @@ void print_rev(char *s)
 	do {
 		_putchar(*s);
 		s--;
-	} while (s != start - 1);
+	} while (s != start -1);
 	_putchar('\n');
 }
