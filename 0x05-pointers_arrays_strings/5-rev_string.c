@@ -11,19 +11,21 @@
 void rev_string(char *s)
 {
 	char *start = s;
-	int len, i = 0;
 	char tmp;
 
 	while (*start != '\0')
 	{
-		len++;
 		start++;
 	}
 
-	for (i = 0; i < len / 2; i++)
+	start--;
+
+	while (s != start && (start - s) > 0)
 	{
-		tmp = s[i];
-		s[i] = s[len - i - 1];
-		s[len - i - 1] = tmp;
+		tmp = *start;
+		*start = *s;
+		*s = tmp;
+		start--;
+		s++;
 	}
 }
