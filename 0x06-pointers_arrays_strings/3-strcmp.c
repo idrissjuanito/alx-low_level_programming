@@ -11,26 +11,23 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int i = 0, j = 0, same = 0, sum_s1 = 0, sum_s2 = 0;
-	int ascii_s1, ascii_s2;
+	unsigned char *ss1 = (unsigned char *)s1;
+	unsigned char *ss2 = (unsigned char *)s2;
 
-	while (s1[i] != '\0' || s2[j] != '\0')
+	while (*ss1 != '\0')
 	{
-		ascii_s1 = (int)s1[i];
-		ascii_s2 = (int)s2[j];
-		if (ascii_s1 != ascii_s2)
-			same = 15;
-		if (s1[i] == '\0' && s2[j] == '\0' && same == 0)
-			return (0);
-		if (s1[i] == '\0' && s2[j] == '\0')
-			break;
-		if (s1[i] != '\0')
-			i++;
-		if (s2[j] != '\0')
-			j++;
-		sum_s1 += ascii_s1;
-		sum_s2 += ascii_s2;
+			if (*ss2 == '\0')
+				return (15);
+			if (*ss2 < *ss1)
+				return (-15);
+			if (*ss2 > *ss1)
+				return (15);
+
+			ss1++;
+			ss2++;
 	}
-	same = sum_s1 > sum_s2 ? (same) : (same * -1);
-	return (same);
+
+	if (*ss2 != '\0')
+		return (-15);
+	return (0);
 }
