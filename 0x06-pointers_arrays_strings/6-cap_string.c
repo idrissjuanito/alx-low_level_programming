@@ -13,16 +13,16 @@ char *cap_string(char *str)
 	int i;
 	char *strc = str;
 	char prevc = '\n';
-	char seperators[] = {',',';','.','{','}','(',')','!','?','\n','\t',' '};
-	int sep_length = sizeof(seperators) / sizeof(char);
+	char sep[] = {',', ';', '.', '{', '}', '(', ')', '!', '?', '\n', '\t', ' '};
+	int sep_length = sizeof(sep) / sizeof(char);
 
-	while (*strc != '\0')	
+	while (*strc != '\0')
 	{
 		if (*strc >= 97 && *strc <= 122)
 		{
 			for (i = 0; i < sep_length; i++)
 			{
-				if (seperators[i] == prevc)
+				if (sep[i] == prevc)
 					*strc -= 32;
 			}
 		}
