@@ -1,7 +1,8 @@
 #include "main.h"
+#include <stdio.h>
 
 int helper(int n, int y);
-int helpy(int n);
+int helpy(int n, long y);
 
 /**
  * _sqrt_recursion - calculates the square root of of a number
@@ -12,7 +13,7 @@ int helpy(int n);
  */
 int _sqrt_recursion(int n)
 {
-	int y = helpy(n / 2);
+	int y = helpy(n, n/2);
 
 	return (helper(n, y));
 }
@@ -37,17 +38,18 @@ int helper(int n, int y)
  * helpy - helps does binary search on n for best y value
  *
  * @n: initial value of y
+ * @y: initial y value
  *
  * Return: interger
  */
-int helpy(int n)
+int helpy(int n, long y)
 {
-	unsigned long int y = n * n;
+	long  by = y * y;
 
-	if (y <= (unsigned long int)n)
+	if (by <= (long)n)
 	{
-		return (n);
+		return (y);
 	}
-	n /= 2;
-	return	((int)helpy(n));
+	y /= 2;
+	return	((int)helpy(n, y));
 }
