@@ -42,9 +42,9 @@ int helper(int n, int y)
  */
 int helpy(int n)
 {
-	unsigned int y = n * n;
+	unsigned long int y = n * n;
 
-	if (y <= (unsigned int)n)
+	if (y <= (unsigned long int)n)
 	{
 		return (n);
 	}
