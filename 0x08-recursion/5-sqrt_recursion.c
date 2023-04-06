@@ -42,10 +42,12 @@ int helper(int n, int y)
  */
 int helpy(int n)
 {
-	if (n * n <= n)
+	unsigned int y = n * n;
+
+	if (y <= (unsigned int)n)
 	{
 		return (n);
 	}
 	n /= 2;
-	return	(helpy(n));
+	return	((int)helpy(n));
 }
