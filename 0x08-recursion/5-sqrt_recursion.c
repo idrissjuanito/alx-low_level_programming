@@ -13,7 +13,11 @@ int helpy(int n, long y);
  */
 int _sqrt_recursion(int n)
 {
-	int y = helpy(n, n/2);
+	int y;
+
+	if (n < 0)
+		return (-1);
+	y = helpy(n, n / 2);
 
 	return (helper(n, y));
 }
@@ -29,7 +33,7 @@ int helper(int n, int y)
 {
 	if (n == y * y)
 		return (y);
-	if (n < 0 || y * y > n)
+	if (y * y > n)
 		return (-1);
 	return	(helper(n, y + 1));
 }
