@@ -12,12 +12,12 @@ int main(int argc, char **argv)
 {
 	int prod = 1, facto, i;
 
-	if (argc < 2)
+	if (argc != 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	for (i = 1; i < argc; i++)
+	for (i = 1; i <= 2; i++)
 	{
 		while (*argv[i] != '\0')
 		{
