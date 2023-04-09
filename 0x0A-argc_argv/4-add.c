@@ -10,7 +10,7 @@
  */
 int main(int argc, char **argv)
 {
-	int sum = 0, facto, i;
+	int sum = 0, facto = 0, i;
 
 	if (argc < 2)
 	{
@@ -19,9 +19,18 @@ int main(int argc, char **argv)
 	}
 	for (i = 1; i < argc; i++)
 	{
+		int sign = 1;
+
 		while (*argv[i] != '\0')
 		{
 			char c = *argv[i];
+
+			if (c == '-')
+			{
+				sign *= -1;
+				argv[i]++;
+				continue;
+			}
 
 			if (!(c >= 48 && c <= 57))
 			{
@@ -33,6 +42,7 @@ int main(int argc, char **argv)
 			facto += *argv[i] - '0';
 			argv[i]++;
 		}
+		facto *= sign;
 		sum += facto;
 		facto = 0;
 	}
