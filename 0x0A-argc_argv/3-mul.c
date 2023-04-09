@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 /**
  * main - entry point
@@ -13,12 +12,12 @@ int main(int argc, char **argv)
 {
 	int prod = 1, facto, i;
 
-	if (argc != 3)
+	if (argc < 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	for (i = 1; i <= 2; i++)
+	for (i = 1; i < argc; i++)
 	{
 		while (*argv[i] != '\0')
 		{
