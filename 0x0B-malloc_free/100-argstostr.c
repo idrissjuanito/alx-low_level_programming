@@ -12,7 +12,7 @@ char *argstostr(int ac, char **av)
 {
 	int i, j, count = 1;
 	char *str = NULL;
-	
+
 	if (ac == 0 || av == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
@@ -29,7 +29,7 @@ char *argstostr(int ac, char **av)
 	str = malloc(count);
 	if (str == NULL)
 		return (NULL);
-	
+
 	count = 0;
 	for (i = 0; i < ac; i++, count++)
 	{
