@@ -57,13 +57,24 @@ char **strtow(char *str)
 	}
 	return (strr);
 }
-
+/**
+ * cp_str - copy a string of chars
+ *
+ * @nChars: the number of characters to copy
+ * @strFrom: the string to copy from
+ * @start: the start index to copy from
+ * @stop:  stop index to copy from
+ *
+ * Return: pointer to char
+ */
 char *cp_str(int nChars, char *strFrom, int start, int stop)
 {
 	int i = 0;
-	char *stri = malloc(nchars + 1);
 
-	if (stri = NULL)
+	sChars++;
+	char *stri = malloc(nchars);
+
+	if (stri == NULL)
 		return (NULL);
 	while (start < stop)
 	{
