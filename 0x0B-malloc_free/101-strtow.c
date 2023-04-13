@@ -11,11 +11,12 @@ char *cp_str(int nChars, char *strFrom, int start, int stop);
  */
 char **strtow(char *str)
 {
-	char **strr, words = NULL;
+	char **strr = NULL;
+	char **words = NULL;
 	int i = 0, j, k = -1, n_words = 0, charCount = 0;
 	int strEnded = 0;
 
-	if (str == NULL || str == "")
+	if (str == NULL || str[0] == '\0')
 		return (NULL);
 
 	while (strEnded == 0)
@@ -70,9 +71,10 @@ char **strtow(char *str)
 char *cp_str(int nChars, char *strFrom, int start, int stop)
 {
 	int i = 0;
+	char *stri = NULL;
 
-	sChars++;
-	char *stri = malloc(nchars);
+	nChars++;
+	stri = malloc(nChars);
 
 	if (stri == NULL)
 		return (NULL);
