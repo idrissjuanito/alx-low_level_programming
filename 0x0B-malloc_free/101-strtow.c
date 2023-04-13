@@ -1,5 +1,7 @@
 #include <stdlib.h>
 
+char *cp_str(int nChars, char *strFrom, int start, int stop);
+
 /**
  * strtow - splits a string into words
  *
@@ -10,8 +12,7 @@
 char **strtow(char *str)
 {
 	char **strr, words = NULL;
-	char *stri = NULL;
-	int i, j, k, l, n_words, charCount = 0;
+	int i = 0, j, k = -1, n_words = 0, charCount = 0;
 	int strEnded = 0;
 
 	if (str == NULL || str == "")
@@ -29,7 +30,7 @@ char **strtow(char *str)
 		}
 		if ((str[i] == ' ' || str[i] == '\n') && k >= 0)
 		{
-			j, l = 0;
+			j = 0;
 			n_words++;
 			words = malloc(n_words * sizeof(char *));
 			if (words == NULL)
@@ -47,17 +48,7 @@ char **strtow(char *str)
 				strr = words;
 			}
 
-			stri = malloc(charCount + 1);
-			if (stri = NULL)
-				return (NULL);
-			while (k < i)
-			{
-				stri[l] = str[k];
-				k++;
-				l++;
-			}
-			stri[l] = '\0';
-			strr[j] = stri;
+			strr[j] = cp_str(charCount, str, k, i);
 			k = -1;
 			words = NULL;
 			charCount = 0;
@@ -65,4 +56,22 @@ char **strtow(char *str)
 		i++;
 	}
 	return (strr);
+}
+
+char *cp_str(int nChars, char *strFrom, int start, int stop)
+{
+	int i = 0;
+	char *stri = malloc(nchars + 1);
+
+	if (stri = NULL)
+		return (NULL);
+	while (start < stop)
+	{
+		stri[i] = strFrom[stop];
+		start++;
+		i++;
+	}
+	stri[i] = '\0';
+
+	return (stri);
 }
