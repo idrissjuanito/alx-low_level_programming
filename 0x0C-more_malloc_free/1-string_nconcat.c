@@ -1,5 +1,6 @@
 #include <stdlib.h>
-#include <stdio.h>
+
+char *concat_str(char *s1, char *s2, int len, unsigned int j, int l);
 /**
  * string_nconcat - concats two strings
  *
@@ -12,7 +13,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *str = NULL;
-	int i = 0, l = 0, k = 0, len = 1;
+	int l = 0, len = 1;
 	unsigned int j = 0;
 
 	while (j < n)
@@ -30,7 +31,26 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			j++;
 		}
 	}
-	str = malloc(len);
+
+	str = concat_str(s1, s2, len, j, l);
+	return (str);
+}
+
+/**
+ * concat_str - concats two strings from their lengths
+ * @s1: string 1
+ * @s2: strng 2
+ * @len: length of the strings
+ * @j: length of string 1
+ * @l: length of string 2
+ *
+ * Return: pointer to string concats
+ */
+char *concat_str(char *s1, char *s2, int len, unsigned int j, int l)
+{
+	char *str = malloc(len);
+	int k = 0, i = 0;
+
 	if (str == NULL)
 		return (NULL);
 	if (len > 1)
@@ -51,5 +71,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 	}
 	str[i] = '\0';
+
 	return (str);
 }
