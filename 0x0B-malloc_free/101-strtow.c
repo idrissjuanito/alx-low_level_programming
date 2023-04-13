@@ -23,17 +23,17 @@ char **strtow(char *str)
 	{
 		if (str[i] == '\0')
 			strEnded = 1;
-		if (str[i] != ' ')
+		if (str[i] != ' ' && str[i] != '\0')
 		{
 			charCount++;
 			if (k < 0)
 				k = i;
 		}
-		if ((str[i] == ' ' || str[i] == '\n') && k >= 0)
+		if ((str[i] == ' ' || str[i] == '\0') && k >= 0)
 		{
 			j = 0;
 			n_words++;
-			words = malloc(n_words * sizeof(char *));
+			words = malloc(1 + n_words * sizeof(char *));
 			if (words == NULL)
 				return (NULL);
 			if (strr == NULL)
@@ -56,6 +56,7 @@ char **strtow(char *str)
 		}
 		i++;
 	}
+	strr[j + 1] = NULL;
 	return (strr);
 }
 /**
@@ -80,7 +81,7 @@ char *cp_str(int nChars, char *strFrom, int start, int stop)
 		return (NULL);
 	while (start < stop)
 	{
-		stri[i] = strFrom[stop];
+		stri[i] = strFrom[start];
 		start++;
 		i++;
 	}
