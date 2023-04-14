@@ -11,17 +11,17 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int i = 0;
-	int *tmpArr = NULL;
+	char *tmpArr = NULL;
 	void *arr = malloc(nmemb * size);
 
 	if (arr == NULL || nmemb == 0 || size == 0)
 		return (NULL);
-	tmpArr = (int *)arr;
+	tmpArr = (char *)arr;
 
 	while (i < nmemb * size)
 	{
-		*tmpArr = 0;
-		i += 4;
+		*tmpArr = '\0';
+		i++;
 		tmpArr++;
 	}
 	return (arr);
