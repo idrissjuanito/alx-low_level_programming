@@ -13,7 +13,7 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	int i, j;
-	dog_t *bingo = malloc(sizeof(dog_t));
+	dog_t *bingo = malloc(sizeof(dog_t *));
 	char *n = (char *)malloc(sizeof(bingo->name));
 	char *o = (char *)malloc(sizeof(bingo->owner));
 
