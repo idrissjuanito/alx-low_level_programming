@@ -14,6 +14,8 @@ void print_dog(dog *d)
 	float age = d->age;
 	char *owner = d->owner;
 
+	if (d == NULL)
+		return;
 	printf("Name: %s\n", name ? name : "(nil)");
 	age ? printf("Age: %f\n", age) : printf("Age: (nil)");
 	printf("Owner: %s\n", owner ? owner : "(nil)");
