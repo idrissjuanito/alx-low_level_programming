@@ -8,15 +8,22 @@
  *
  * Return: returns void
  */
-void print_dog(dog *d)
+void print_dog(struct dog *d)
 {
-	char *name = d->name;
+	char *name, owner;
 	float age = d->age;
-	char *owner = d->owner;
 
+	if (d->name == NULL)
+		name = "(nil)";
+	else
+		name = d->name;
+	if (d->owner == NULL)
+		owner = "(nil)";
+	else
+		owner = d->owner;
 	if (d == NULL)
-		return;
-	printf("Name: %s\n", name ? name : "(nil)");
-	age ? printf("Age: %f\n", age) : printf("Age: (nil)");
-	printf("Owner: %s\n", owner ? owner : "(nil)");
+		printf("");
+	printf("Name: %s\n", name);
+	printf("Age: %f\n", age);
+	printf("Owner: %s\n", owner);
 }
