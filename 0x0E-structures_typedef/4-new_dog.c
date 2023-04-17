@@ -14,8 +14,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	int i, j;
 	dog_t *bingo = malloc(sizeof(dog_t));
-	char *n = malloc(sizeof(bingo->name));
-	char *o = malloc(sizeof(bingo->owner));
+	char *n = (char *)malloc(sizeof(bingo->name));
+	char *o = (char *)malloc(sizeof(bingo->owner));
 
 	if (bingo == NULL || n == NULL || o == NULL)
 		return (NULL);
