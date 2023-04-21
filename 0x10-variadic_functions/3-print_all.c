@@ -42,7 +42,8 @@ void print_all(const char * const format, ...)
 				printf("%s%c", seperator, c);
 				break;
 			default:
-				break;
+				i++;
+				continue;
 		}
 		i++;
 		seperator = ", ";
