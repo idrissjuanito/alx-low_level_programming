@@ -6,7 +6,7 @@ _start:
 	mov eax,4
 	mov ebx,1
 	mov ecx,heyyou
-	mov edx,18
+	mov edx,17
 	int 0x80
 	mov eax,1
 	int 0x80
