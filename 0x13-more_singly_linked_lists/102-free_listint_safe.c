@@ -31,7 +31,6 @@ size_t free_listint_safe(listint_t **h)
 		free(current);
 		current = tmp;
 	}
-	printf("%lu\n", n);
 	*h = NULL;
 	return (n);
 }
