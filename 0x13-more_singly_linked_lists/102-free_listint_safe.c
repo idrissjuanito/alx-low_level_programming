@@ -22,12 +22,11 @@ size_t free_listint_safe(listint_t **h)
 		if (current >= current->next)
 		{
 			free(current);
-			exit(98);
+			break;
 		}
 		free(current);
 		current = tmp;
 	}
-	tmp = NULL;
 	*h = NULL;
 	return (n);
 }
