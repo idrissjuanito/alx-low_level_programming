@@ -16,7 +16,7 @@ listint_t *find_listint_loop(listint_t *head)
 	tmp = head;
 	while (tmp)
 	{
-		if (tmp->next >= tmp)
+		if (tmp->next && tmp->next >= tmp)
 		{
 			node = tmp->next;
 			break;
