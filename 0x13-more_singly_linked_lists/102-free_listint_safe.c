@@ -12,16 +12,18 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *current = *h, *tmp;
+	listint_t *current;
+	listint_t *tmp;
 	size_t n = 0;
 
 	if (!h)
 		exit(98);
+	current = *h;
 	while (current)
 	{
 		n++;
 		tmp = current->next;
-		if (current >= current->next)
+		if (current <= current->next)
 		{
 			free(current);
 			break;
@@ -29,6 +31,7 @@ size_t free_listint_safe(listint_t **h)
 		free(current);
 		current = tmp;
 	}
+	printf("%lu\n", n);
 	*h = NULL;
 	return (n);
 }
