@@ -15,6 +15,8 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *current = *h, *tmp;
 	size_t n = 0;
 
+	if (!h)
+		exit(98);
 	while (current)
 	{
 		n++;
