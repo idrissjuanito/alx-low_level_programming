@@ -11,7 +11,7 @@ unsigned long int _pow(int x, int y);
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int flipped = n ^ m;	
+	unsigned long int flipped = n ^ m;
 	unsigned long int flipper = _pow(2, 63);
 	unsigned int num = 0;
 
