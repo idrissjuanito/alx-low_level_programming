@@ -1,6 +1,5 @@
 #include <unistd.h>
 #include <fcntl.h>
-#include <stdio.h>
 
 /**
  * append_text_to_file - appends text to a file
@@ -19,7 +18,6 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (!filename)
 		return (-1);
 	fd = open(filename, O_WRONLY | O_APPEND);
-	printf("--> %d\n", fd);
 	if (fd == -1)
 		return (-1);
 	while (text_content && text_content[i] != '\0')
