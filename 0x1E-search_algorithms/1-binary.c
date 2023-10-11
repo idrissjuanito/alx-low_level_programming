@@ -59,7 +59,7 @@ void print_arr(int *arr, size_t lower, size_t upper)
 {
 	size_t i;
 
-	printf("searching in array: ");
+	printf("Searching in array: ");
 	for (i = lower; i <= upper; i++)
 		if (i != upper)
 			printf("%d, ", arr[i]);
